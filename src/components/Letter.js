@@ -1,9 +1,11 @@
-import React, {useConext, useContext} from 'react';
-import { AppContext } from '../App';
-import Board from './Board';
+import React, { useContext, useEffect } from "react";
+import { AppContext } from "../App";
 
-function Letter(letterPos, attemptVal) {
-    const {board} = useContext(AppContext)
+
+function Letter({letterPos, attemptVal}) {
+  const {board} = useContext(AppContext) 
+    const letter = board[attemptVal][letterPos] ;
+    console.log(letter)
 
     return (
         <div>
