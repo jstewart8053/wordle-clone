@@ -30,7 +30,7 @@ function App() {
 
     let currWord = "";
     for (let i = 0; i < 5; i++) {
-      currWord += board[currAttempt.attempt][i];
+      currWord += board[currAttempt.attempt][i].toLocaleLowerCase();
     }
     if (wordSet.has(currWord.toLowerCase())) {
       setCurrAttempt({ attempt: currAttempt.attempt + 1, letter: 0 });
