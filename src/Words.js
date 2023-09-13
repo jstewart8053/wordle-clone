@@ -1,4 +1,5 @@
 import wordBank from "./wordle-bank.txt";
+const axios = require('./Axios');
 
 export const boardDefault = [
   ["", "", "", "", ""],

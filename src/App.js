@@ -18,6 +18,11 @@ function App() {
     guessedWord: false,
   });
 
+// Reset the game function
+const resetGame = () => {
+  // Reload the page to reset the game
+  window.location.reload(true);
+};
   useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
@@ -42,7 +47,7 @@ function App() {
       setGameOver({ gameOver: true, guessedWord: true });
       return;
     }
-    console.log(currAttempt);
+    
     if (currAttempt.attempt === 5) {
       setGameOver({ gameOver: true, guessedWord: false });
       return;
@@ -72,6 +77,7 @@ function App() {
     <div className="App">
       <nav>
         <h1>Wordle</h1>
+        <button onClick={resetGame}>Reset Game</button>
       </nav>
       <AppContext.Provider
         value={{
